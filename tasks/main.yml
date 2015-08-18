@@ -1,0 +1,10 @@
+---
+- name: Install MySQL community repo.
+  yum:
+    name: "{{ mysql_community_repo_url }}"
+    state: present
+
+- name: Import MySQL community GPG key.
+  rpm_key:
+    key: "{{ mysql_community_repo_gpg_key_url }}"
+    state: present
